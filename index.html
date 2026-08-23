@@ -621,6 +621,10 @@
     // alle anderen Hashes (TOC-Anker) ignorieren
   }
   window.addEventListener('DOMContentLoaded', function() {
+    // Sprache aus URL-Parameter: ?lang=en oder ?lang=fr
+    var urlLang = new URLSearchParams(window.location.search).get('lang');
+    if (urlLang === 'en' || urlLang === 'fr') setLang(urlLang);
+
     handleHash();
 
     // TOC-Links: explizit scrollen (iOS Safari fix)
