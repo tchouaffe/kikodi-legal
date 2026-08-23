@@ -610,4 +610,13 @@
       el.classList.toggle('visible', isActive);
     });
   }
+
+  // ── Hash routing: #terms / #privacy ─────────────────────────
+  function handleHash() {
+    var hash = window.location.hash.replace('#', '');
+    if (hash === 'privacy') showSection('privacy');
+    else showSection('terms');
+  }
+  window.addEventListener('DOMContentLoaded', handleHash);
+  window.addEventListener('hashchange', handleHash);
 </script>
