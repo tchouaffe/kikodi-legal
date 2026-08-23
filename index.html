@@ -615,7 +615,8 @@
   function handleHash() {
     var hash = window.location.hash.replace('#', '');
     if (hash === 'privacy') showSection('privacy');
-    else showSection('terms');
+    else if (hash === 'terms') showSection('terms');
+    // alle anderen Hashes (TOC-Anker) ignorieren
   }
   window.addEventListener('DOMContentLoaded', handleHash);
   window.addEventListener('hashchange', handleHash);
